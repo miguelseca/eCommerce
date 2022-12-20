@@ -1,6 +1,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { catchError, EMPTY, Subject, takeUntil } from 'rxjs';
+import { Store } from '@ngrx/store';
+import { catchError, EMPTY, map, Observable, Subject, takeUntil } from 'rxjs';
+import Cart from 'src/app/models/cart';
 import { CartService } from 'src/app/services/cart.service';
 
 @Component({
@@ -8,27 +10,27 @@ import { CartService } from 'src/app/services/cart.service';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit, OnDestroy {
+export class HeaderComponent implements OnInit {
   value!: string;
-  cartCount: string = '';
-  endSubs$: Subject<any> = new Subject();
+  cart$!: Observable<Cart>;
+  cartCount$!: Observable<number>;
+  cartCountString$!: Observable<string>;
 
   constructor(
-    private cartService: CartService,
+    private cartStore: Store<{ cartStore: Cart }>,
     private router: Router
-  ) {}
+  ) {
+    this.cart$ = cartStore.select('cartStore');
+
+    this.cartCount$ = this.cart$.pipe(map((cart) => cart.items.length));
+    this.cartCountString$ = this.cart$.pipe(map((cart) => cart.items.length.toString()));
+
+  }
 
   ngOnInit(): void {
-    this.cartService.cart$
-      .pipe(takeUntil(this.endSubs$))
-      .subscribe((cart) => (this.cartCount = cart?.items.length.toString()));
   }
 
   onSearch() {
     this.router.navigate(['products']);
-  }
-
-  ngOnDestroy(): void {
-    this.endSubs$.complete();
   }
 }

@@ -22,7 +22,6 @@ export const CartReducer = createReducer(
     };
 
     if (!exists) {
-      console.log('new products');
       newCart.items = [
         ...state.items,
         { productId: product.id, product: product, quantity: qty },

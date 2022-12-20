@@ -3,42 +3,39 @@
     <div class="col-8">
       <div
         class="cart-item mb-5"
-        *ngFor="let cartItem of theCart.items; index as index"
+        *ngFor="let item of (cart$ | async)!.items; index as index"
       >
         <div class="grid">
           <div class="col-2 cart-item-image">
-            <img
-              [src]="cartItem.product.image"
-              [attr.alt]="cartItem.product.name"
-            />
+            <img [src]="item.product.image" [attr.alt]="item.product.name" />
           </div>
           <div class="col-6">
-            <div class="cart-item-name">{{ cartItem.product.name }}</div>
+            <div class="cart-item-name">{{ item.product.name }}</div>
             <div class="cart-item-price">
-              {{ cartItem.product.price | currency }}
+              {{ item.product.price | currency }}
             </div>
             <div class="cart-item-remove">
               <i
                 class="pi pi-trash"
                 pTooltip="delete item"
-                (click)="removeItem(cartItem.productId)"
+                (click)="removeItem(item.productId)"
               ></i>
             </div>
           </div>
           <div class="col-2 cart-item-quantity">
             <p-inputNumber
               mode="decimal"
-              [inputId]="cartItem.productId"
+              [inputId]="item.productId"
               [min]="1"
               [max]="100"
-              [(ngModel)]="cartItem.quantity"
-              (keyup)="changeQuantity(cartItem.productId, $event)"
+              [(ngModel)]="item.quantity"
+              (keyup)="changeQuantity(item.productId, $event)"
             >
             </p-inputNumber>
             <div class="cart-item-subtotal">
               Subtotal:
               <span class="cart-item-subtotal-value">{{
-                cartItem.product.price * cartItem.quantity | currency
+                item.product.price * item.quantity | currency
               }}</span>
             </div>
           </div>
@@ -50,16 +47,16 @@
         <h3>Order Summary</h3>
         <div class="summary-price">
           <span>Items Price</span>
-          <span>{{ 385 | currency }}</span>
+          <span>{{ cartTotal$ | async | currency }}</span>
         </div>
         <div class="summary-price">
           <span>Packing & Shipping</span>
-          <span class="free">Free</span>
+          <span class="free">{{ (cartTotal$ | async)! * 0.1 | currency }}</span>
         </div>
         <div class="to-checkout">
           <div class="summary-price">
             <span>Total Price</span>
-            <span>{{ 385 | currency }}</span>
+            <span>{{ (cartTotal$ | async)! * 1.1 | currency }}</span>
           </div>
           <div class="checkout-button">
             <p-button label="Checkout"></p-button>
@@ -69,7 +66,11 @@
 
       <div class="grid">
         <div class="col-12">
-          <h4>My Cart: {{ cartCount }} Item(s)</h4>
+          <h4 *ngIf="cartCount$ | async">
+            My Cart: {{ cartCount$ | async }}
+            <span *ngIf="(cartCount$ | async)! > 1">Items</span>
+            <span *ngIf="(cartCount$ | async)! == 1">Item</span>
+          </h4>
         </div>
         <div class="col-12 cart-shipping mb-5">
           Shipping after the payment, Delivery time : 1 to 4 working days

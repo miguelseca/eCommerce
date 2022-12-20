@@ -33,11 +33,11 @@
         ></i>
 
         <i
-          *ngIf="cartCount"
+          *ngIf="cartCount$ | async "
           class="pi pi-shopping-cart text-secundary"
           pBadge
           style="font-size: 1.5rem"
-          [value]="cartCount"
+          [value]="(cartCountString$ | async)!"
           severity="danger"
           pTooltip="my cart"
           tooltipPosition="bottom"
@@ -45,7 +45,7 @@
         ></i>
 
         <i
-          *ngIf="!cartCount"
+          *ngIf="!(cartCount$ | async)"
           class="pi pi-shopping-cart text-secundary"
           style="font-size: 1.5rem"
           pTooltip="my cart"
