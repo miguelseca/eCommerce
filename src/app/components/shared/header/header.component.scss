@@ -1,0 +1,45 @@
+header {
+    margin-bottom: 10px;
+    
+    .logo {        
+      img {
+        width: 200px;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        padding-bottom: 12px;
+      }
+    }        
+  }
+  
+  a {
+    margin-left: 48px;
+    padding-top: 36px;
+    font-size:larger;
+    color: black;
+  
+    &:hover {
+      color: --main-color;
+      text-decoration: underline;
+     }
+  }
+  
+  .tools {
+   
+    position: absolute;
+    right: 0px;
+     
+    min-width: 120px;
+    margin-bottom: 5px;
+    
+    
+  }
+  
+  .pi {
+    margin-right: 28px;
+    cursor: pointer;
+  }
+  .pBadge:empty {
+    display: none;
+  
+  }

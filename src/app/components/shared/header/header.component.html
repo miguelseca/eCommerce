@@ -1,0 +1,58 @@
+<header>
+  <div class="grid">
+    <div class="col-12 logo">
+      <img src="../../../assets/logo.png" alt=" logo" />
+    </div>
+
+    <div class="col-6 links">
+      <a class="nav-item nav-link" routerLink="/">Home</a>
+      <a class="nav-item nav-link" routerLink="/products">Products</a>
+      <a class="nav-item nav-link" routerLink="/products">Promotions</a>
+    </div>
+
+    <div class="col-8 md:col-4 lg:col-3 lg:col-offset-2 search">
+      <span class="p-input-icon-left">
+        <i class="pi pi-search"></i>
+        <input
+          type="text"
+          pInputText
+          placeholder="Search"
+          (keyup)="onSearch()"
+          [(ngModel)]="value"
+        />
+      </span>
+    </div>
+    <div class="col">
+      <div class="tools">
+        <i
+          class="pi pi-user text-secundary"
+          style="font-size: 1.5rem"
+          pTooltip="profile"
+          tooltipPosition="bottom"
+          routerLink="/cart"
+        ></i>
+
+        <i
+          *ngIf="cartCount"
+          class="pi pi-shopping-cart text-secundary"
+          pBadge
+          style="font-size: 1.5rem"
+          [value]="cartCount"
+          severity="danger"
+          pTooltip="my cart"
+          tooltipPosition="bottom"
+          routerLink="/cart"
+        ></i>
+
+        <i
+          *ngIf="!cartCount"
+          class="pi pi-shopping-cart text-secundary"
+          style="font-size: 1.5rem"
+          pTooltip="my cart"
+          tooltipPosition="bottom"
+          routerLink="/cart"
+        ></i>
+      </div>
+    </div>
+  </div>
+</header>

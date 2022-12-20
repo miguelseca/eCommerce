@@ -1,0 +1,121 @@
+{
+  "categories": [
+    {
+      "id": 0,
+      "name": "Trekking",
+      "icon": "spinner",
+      "color": "aquamarine",
+      "image": "https://i.ibb.co/mTYRnFM/trekking.jpg"
+    },
+    {
+      "id": 1,
+      "name": "Trail Running",
+      "icon": "image",
+      "color": "darkseagreen",
+      "image": "https://i.ibb.co/kB800Db/trail.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Climbing",
+      "icon": "moon",
+      "color": "lightgreen",
+      "image": "https://i.ibb.co/k1ytbqG/climbing.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Rafting",
+      "icon": "map",
+      "color": "indianred",
+      "image": "https://i.ibb.co/sKSyWJH/rafting.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Canyoning",
+      "icon": "unlock",
+      "color": "darkolivegreen",
+      "image": "https://i.ibb.co/KGZv5ms/canyoning.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Kayaking",
+      "icon": "wrench",
+      "color": "coral",
+      "image": "https://i.ibb.co/Sc00Qr7/kayaking.jpg"
+    }
+  ],
+
+  "products": [
+    {
+      "id": 0,
+      "name": "Climbing Shoes",
+      "description": "High-end rock climbing shoes.",
+      "richDescription": "An ultra-premium shoe with a solid all-around performance at a reasonable price",
+      "image": "https://i.ibb.co/x3S0wSY/gato1.png",
+      "images": [
+        "https://i.ibb.co/x3S0wSY/gato1.png",
+        "https://i.ibb.co/M9J5N1g/gato2.png"
+      ],
+      "brand": "Simond",
+      "price": 55,
+      "category": 2,
+      "stock": 20,
+      "rating": 3,
+      "isFeatured": true
+    },
+    {
+      "id": 1,
+      "name": "Kids Boots",
+      "description": "Children hiking/trekking boots of outstanding quality",
+      "richDescription": "For day hikers and lightweight backpackers who stick mostly to maintained trails, our top value pick is the Merrell Moab 2. What makes this boot so popular is its lightweight and comfortable feel at such a reasonable price. For $145, you get good cushioning underfoot, trusty Vibram outsoles, and a waterproof membrane (an upgraded Gore-Tex model is available for $165). Updated a few years ago, but they didn't fuss much with the proven design. Notable changes included a new insole with a higher arch, improved cushioning under the heel, and a more waterproof and durable suede upper.",
+      "image": "https://i.ibb.co/2k1pbGj/boots1.png",
+      "images": [
+        "https://i.ibb.co/2k1pbGj/boots1.png",
+        "https://i.ibb.co/8P6s1pK/boots2.png",
+        "https://i.ibb.co/Smkjz44/boots3.png"
+      ],
+      "brand": "ActiveWear",
+      "price": 34,
+      "category": 2,
+      "stock": 20,
+      "rating": 2,
+      "isFeatured": true
+    },
+    {
+      "id": 2,
+      "name": "Kayak",
+      "description": "With excellent handling, a long lifespan, and great comfort, this kayak will go the distance",
+      "richDescription": "A nesting-style sea kayak that paddles through big waves while taking up less room in the closet. Rather heavy but a great performance for a two-person model that can also be used solo",
+      "image": "https://i.ibb.co/fpnq68M/kayak1.png",
+      "images": [
+        "https://i.ibb.co/fpnq68M/kayak1.png",
+        "https://i.ibb.co/7nWLPkh/kayak2.png",
+        "https://i.ibb.co/b7Wrqy4/kayak3.png"
+      ],
+      "brand": "adidas",
+      "price": 275,
+      "category": 2,
+      "stock": 20,
+      "rating": 5,
+      "isFeatured": true
+    },
+    {
+      "id": 3,
+      "name": "Trekking Boots",
+      "description": "Ultra durable trekking boots",
+      "fullDescription": "beatiful shoes",
+      "image": "https://i.ibb.co/SBhcdzv/boots1.png",
+      "images": [
+        "https://i.ibb.co/SBhcdzv/boots1.png",
+        "https://i.ibb.co/tDXYFwq/boots2.png",
+        "https://i.ibb.co/qMCX887/boots3.png",
+        "https://i.ibb.co/h9P0WvQ/boots4.png"
+      ],
+      "brand": "adidas",
+      "price": 71,
+      "category": 2,
+      "stock": 20,
+      "rating": 4,
+      "isFeatured": true
+    }
+  ]
+}

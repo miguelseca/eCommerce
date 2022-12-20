@@ -1,0 +1,108 @@
+.cart-page {
+    min-height: 500px;
+    button {
+        
+      background-color: var(--primary-color);
+      border: 1px;
+      border-radius: 10px;
+      color: white;
+      
+      padding: 10px;
+  
+       &:hover {
+        background-color: var(--primary-color);
+        opacity: 0.7;
+      
+      }
+    }
+    .cart {
+      
+      &-shipping {
+        color: var(--green-700);
+
+      }
+  
+      &-item {
+        background-color: rgba(0, 0, 0, 0.05);
+        padding: 15px;
+        border-radius: 15px;
+  
+        &-image {
+          img {
+            max-width:100%;
+            height:auto;
+          }
+        }
+  
+        &-name {
+          font-weight: 600;
+          font-size: 1.2em;
+          margin-bottom: 15px;
+        }
+  
+        &-price {
+          font-weight: 600;
+          font-size: 1.2em;
+          margin-bottom: 15px;
+          color: var(--primary-color);
+        }
+  
+        &-quantity {
+          width: 80px;
+          margin: 15px 0;
+        }
+  
+        &-subtotal {
+          font-weight: 600;
+          &-value {
+            color: var(--green-600);
+          }
+        }
+      }
+    }
+    .pi {
+     
+      margin-right: 5px;
+      cursor: pointer;
+    }
+  }
+  
+  
+  .order-summary {
+    background-color: var(--very-light-grey);
+    padding: 15px;
+    border: 1px solid var(--surface-200);
+  
+    .summary-price {
+      display: flex;
+      margin: 15px 0;
+      span {
+        display: block;
+        width: 80%;
+  
+        &:last-child {
+          width: 20%;
+          font-weight: 600;
+        }
+  
+        &.free {
+          color: var(--color-3);
+        }
+      }
+    }
+  
+    .checkout-button {
+      button {
+        width: 100%;
+  
+        &:enabled:hover {
+          opacity: 1;
+          background-color: rgba(139, 155, 116, 1);
+          color: white;
+          border: 0;
+        }
+      }
+  
+    }
+  }
+  

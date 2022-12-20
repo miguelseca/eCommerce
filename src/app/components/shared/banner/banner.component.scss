@@ -1,0 +1,62 @@
+.banner {
+    padding-left: -15px;
+    padding-right: -15px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    height: 200px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+  
+    &-text {
+      position: absolute;
+      color: white;
+      margin-top: 10px;
+      margin-left: 50px;
+      
+  
+      h1 {
+        margin: 0;
+        font-size: 3em;
+        font-weight: 600;
+      }
+      h2 {
+        margin: 0;
+        font-size: 2em;
+        font-weight: 400;
+      }
+    }
+  }
+  
+  .banner-button {
+    
+    opacity: 0.9;
+    background-color: rgba(139, 155, 116, 0.8);
+    color: white;
+    border: 0;
+    border-radius: 10px;
+    height: 50px;
+    font-size: large;
+    font-weight: 500;
+  
+    &:enabled:hover {
+      opacity: 1;
+      background-color: rgba(139, 155, 116, 1);
+      color: white;
+      border: 0;
+    }
+  }
+  
+  video {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  
+    &::-webkit-media-controls {
+      display: none !important;
+    }
+  }
+  

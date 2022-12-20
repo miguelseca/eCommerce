@@ -1,0 +1,12 @@
+<p-carousel
+  [value]="featuredProducts"
+  [numVisible]="3"
+  [autoplayInterval]="3000"
+  [responsiveOptions]="responsiveOptions"
+>
+  <ng-template let-product pTemplate="item">
+    <app-product [product]="product"></app-product>
+  </ng-template>
+</p-carousel>
+
+
