@@ -1,5 +1,5 @@
 //===================== ANGULAR COMPONENTS =======================================
-import { NgModule } from '@angular/core';
+import { isDevMode, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
@@ -18,6 +18,7 @@ import { GalleriaModule } from 'primeng/galleria';
 import { CheckboxModule } from 'primeng/checkbox';
 import { TooltipModule } from 'primeng/tooltip';
 import { RippleModule } from 'primeng/ripple';
+import {DialogModule} from 'primeng/dialog';
 
 //===================== COMPONENTS =======================================
 //pages
@@ -40,7 +41,14 @@ import { FeaturedProductsComponent } from './components/shared/featured-products
 //NGRX
 import { StoreModule } from '@ngrx/store';
 import { CartReducer } from './state/cart.reducer';
-import { GlobalReducer } from './state/global.reducer';
+import { StoreDevtoolsModule } from "@ngrx/store-devtools";
+import { EffectsModule } from '@ngrx/effects';
+
+
+import { AuthModule } from "./authentication/auth.module";
+import { EntityDataModule } from '@ngrx/data';
+import { entityConfig } from './entity-metadata';
+import { ProductResolver } from '../app/state/product.resolver';
 
 //=========================================================================================================
 
@@ -77,10 +85,16 @@ import { GlobalReducer } from './state/global.reducer';
     GalleriaModule,
     TooltipModule,
     CheckboxModule,
+    DialogModule,
     RippleModule,
-    StoreModule.forRoot({ cartStore: CartReducer, globalStore: GlobalReducer }),
+    AuthModule.forRoot(),
+    StoreModule.forRoot({ cartStore: CartReducer }),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
+    EffectsModule.forRoot([]),
+    EntityDataModule.forRoot(entityConfig),
+    
   ],
-  providers: [],
+  providers: [ProductResolver],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

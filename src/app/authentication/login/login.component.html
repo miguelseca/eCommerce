@@ -1,0 +1,43 @@
+<div class="login_dialog">
+
+  <mat-dialog-content>
+    <form [formGroup]="form" class="login-form">
+      <mat-form-field>
+        <input
+          matInput
+          type="email"
+          placeholder="Email"
+          formControlName="email"
+        />
+      </mat-form-field>
+
+      <mat-form-field>
+        <input
+          matInput
+          type="password"
+          placeholder="Password"
+          formControlName="password"
+        />
+      </mat-form-field>
+    </form>
+  </mat-dialog-content>
+
+  <mat-dialog-actions class="login-buttons">
+    <button
+      mat-raised-button
+      class="dark-btn-confirm"
+      (click)="login()"
+      [disabled]="!form.valid"
+    >
+      Login
+    </button>
+    <button
+      mat-raised-button
+      mat-dialog-close
+      class="dark-btn-confirm"
+      (click)="cancel()"
+    >
+      Cancel
+    </button>
+  </mat-dialog-actions>
+</div>

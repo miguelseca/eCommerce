@@ -39,20 +39,16 @@
       display: none !important;
     }
   }
-  
-
 
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500&display=swap');
-
 @import '~primeicons/primeicons.css';
 @import '~primeng/resources/themes/saga-green/theme.css';
-//@import '~primeng/resources/themes/rhea/theme.css';
 @import '~primeflex/primeflex.css';
 @import '~primeng/resources/primeng.min.css';
 
 body,
 .p-component {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Open Sans', sans-serif; 
 }
 
 a {
