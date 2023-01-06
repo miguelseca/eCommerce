@@ -2,12 +2,13 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Category } from '../models/category';
+import { DB_URL_CATEGORIES } from 'src/config/database_config';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CategoryService {
-  apiURLCategories = 'http://localhost:666/api/category';
+  apiURLCategories = DB_URL_CATEGORIES;
 
   constructor(private http: HttpClient) {}
 
